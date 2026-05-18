@@ -20,7 +20,7 @@
 <meta property="og:title" content="'주류' 시장을 넘보는 '비주류'의 역습" />
 <meta property="og:description" content="한 주를 7일로 접어 묻는다. 술이 줄고 0.0이 자라는 시간. 어메이징브루잉이 떠나고, 도쿄·뉴욕·런던은 5년을 먼저 걸었다. 한 잔이라는 단위가 흔들리는 자리에서, 무엇이 새로 그려지는가." />
 <meta property="og:url" content="https://laguna821.github.io/magazines/ASC/ASC_v002.html" />
-<meta property="og:updated_time" content="2026-05-18T17:14:05+09:00" />
+<meta property="og:updated_time" content="2026-05-18T18:36:59+09:00" />
 
 <meta property="og:image" content="https://laguna821.github.io/magazines/ASC/achmage_society_magazine_vol002_og.jpg" />
 <meta property="og:image:secure_url" content="https://laguna821.github.io/magazines/ASC/achmage_society_magazine_vol002_og.jpg" />
@@ -69,8 +69,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretend
   --top-h:60px; --rail-w:50px; --ease:cubic-bezier(.18,.84,.24,1); --ease2:cubic-bezier(.16,.74,.22,1);
   --pretext-meter-w:20px; --pretext-meter-gap:10px; --pretext-content-w:1fr; --pretext-terrain-h:82px;
 }
-.app-shell{position:fixed;inset:0;margin:auto;width:100vw;height:100svh;max-width:480px;background:var(--paper);overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.18);isolation:isolate;}
-@media(min-width:560px){.app-shell{width:min(430px,100vw);height:min(920px,calc(100svh - 28px));border-radius:24px;border:1px solid rgba(17,17,17,.12)}}
+.app-shell{position:fixed;inset:0;margin:auto;width:100vw;height:100vh;height:100svh;height:100dvh;max-width:480px;background:var(--paper);overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.18);isolation:isolate;}
+@media(min-width:560px){.app-shell{width:min(430px,100vw);height:min(920px,calc(100vh - 28px));height:min(920px,calc(100svh - 28px));height:min(920px,calc(100dvh - 28px));border-radius:24px;border:1px solid rgba(17,17,17,.12)}}
 .app-shell::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 8%,rgba(17,17,17,.04),transparent 28%),linear-gradient(90deg,rgba(17,17,17,.025) 1px,transparent 1px),linear-gradient(180deg,rgba(17,17,17,.022) 1px,transparent 1px);background-size:auto,30px 30px,30px 30px;pointer-events:none;z-index:0}
 .progress{position:absolute;left:0;right:0;top:0;height:2px;background:rgba(17,17,17,.08);z-index:50}.progress b{display:block;height:100%;width:0;background:#111;transition:width .38s var(--ease)}
 .top-nav{position:absolute;left:0;right:0;top:2px;height:calc(var(--top-h) - 2px);display:grid;grid-template-columns:58px minmax(0,1fr) 38px;gap:6px;align-items:center;padding:7px 8px 6px;background:rgba(247,247,244,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:40}
@@ -114,6 +114,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretend
 .v-dot{position:relative;z-index:1;width:5px;height:5px;border-radius:999px;background:#c7c7c2;transition:height .22s var(--ease),background .22s var(--ease),opacity .22s var(--ease)}.v-dot.active{height:22px;background:#111}.v-dot.is-read{background:#8b8b84}
 .pretext-debug{display:none}
 .hint{position:absolute;left:calc(var(--rail-w) + 18px);right:18px;bottom:12px;z-index:32;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:#777;font-weight:800;pointer-events:none}.hint span{background:rgba(255,255,255,.78);border:1px solid rgba(17,17,17,.08);padding:4px 6px;border-radius:999px;backdrop-filter:blur(8px)}
+.page-nav{position:absolute;right:7px;top:50%;transform:translateY(-50%);z-index:31;display:flex;flex-direction:column;gap:6px;pointer-events:auto}
+.page-nav button{appearance:none;width:34px;height:34px;border:1px solid rgba(17,17,17,.16);background:rgba(255,255,255,.92);border-radius:50%;font-size:11px;font-weight:800;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.06);color:#111;display:flex;align-items:center;justify-content:center;padding:0;line-height:1;letter-spacing:0}
+.page-nav button:active{transform:scale(.92)}
+.page-nav button:disabled{opacity:.32;cursor:default}
+@media(max-height:760px){.page-nav{right:5px;gap:5px}.page-nav button{width:30px;height:30px;font-size:10px}}
 .drawer{position:absolute;z-index:100;inset:0;background:rgba(247,247,244,.96);backdrop-filter:blur(20px);display:none;flex-direction:column;padding:16px 16px max(16px,env(safe-area-inset-bottom));overflow:hidden}.drawer.open{display:flex;animation:drawerIn .22s var(--ease) both}@keyframes drawerIn{from{opacity:0;transform:scale(.985);filter:blur(10px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
 .drawer-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid #111;padding-bottom:12px;margin-bottom:12px}.drawer-head h2{margin:0;font-size:27px;line-height:.98;letter-spacing:-.06em;font-weight:880}.drawer-head p{margin:6px 0 0;color:#555;font-size:12px;line-height:1.45;letter-spacing:-.025em}.close-btn{appearance:none;border:1px solid #111;background:#111;color:#fff;border-radius:10px;width:42px;height:42px;font-size:22px;cursor:pointer}
 .drawer-tabs{display:flex;gap:6px;margin-bottom:12px;overflow:auto}.drawer-tab{appearance:none;border:1px solid var(--line);border-radius:999px;background:#fff;color:#555;padding:7px 10px;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer}.drawer-tab.active{background:#111;color:#fff;border-color:#111}
@@ -138,6 +143,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretend
   <aside class="side-rail" id="sectionRail" aria-label="섹션 선택"></aside>
   <main class="stage" id="stage" aria-live="polite"></main>
   <div class="hint"><span>← logic →</span><span>↑ depth ↓</span></div>
+  <nav class="page-nav" aria-label="페이지 이동"><button class="page-nav-up" type="button" aria-label="이전 페이지">▲</button><button class="page-nav-down" type="button" aria-label="다음 페이지">▼</button></nav>
   <section class="drawer" id="drawer" aria-label="매거진 정보와 목차">
     <div class="drawer-head">
       <div><h2>Achmage Society Magazine</h2><p>Volume 002 · 소버 큐리어스 — 비주류의 역습</p></div>
@@ -410,19 +416,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretend
     if(e.key==='Home') goPage(0,'down');
     if(e.key==='End') goPage(currentSection().pages.length-1,'up');
   });
-  let startX=0,startY=0,startT=0;
+  document.querySelector('.page-nav-up').addEventListener('click', e=>{ e.stopPropagation(); prevPage(); });
+  document.querySelector('.page-nav-down').addEventListener('click', e=>{ e.stopPropagation(); nextPage(); });
   const swipeTarget = document.getElementById('app');
-  swipeTarget.addEventListener('pointerdown',e=>{ if(el.drawer.classList.contains('open')) return; startX=e.clientX; startY=e.clientY; startT=Date.now(); },{passive:true});
-  swipeTarget.addEventListener('pointerup',e=>{
+  let lastSwipeT = 0;
+  function processSwipe(dx, dy) {
     if(el.drawer.classList.contains('open')) return;
-    const dx=e.clientX-startX, dy=e.clientY-startY, adx=Math.abs(dx), ady=Math.abs(dy);
-    if(Math.max(adx,ady)<42) return;
-    if(adx>ady*1.12) { dx<0 ? nextSection() : prevSection(); }
+    const now = Date.now();
+    if(now - lastSwipeT < 220) return;
+    const adx = Math.abs(dx), ady = Math.abs(dy);
+    if(Math.max(adx,ady) < 42) return;
+    lastSwipeT = now;
+    if(adx > ady*1.25) { dx<0 ? nextSection() : prevSection(); }
     else { dy<0 ? nextPage() : prevPage(); }
-  },{passive:true});
+  }
+  let pStartX=0, pStartY=0;
+  swipeTarget.addEventListener('pointerdown',e=>{ pStartX=e.clientX; pStartY=e.clientY; },{passive:true});
+  swipeTarget.addEventListener('pointerup',e=>{ processSwipe(e.clientX-pStartX, e.clientY-pStartY); },{passive:true});
+  let tStartX=0, tStartY=0;
+  swipeTarget.addEventListener('touchstart',e=>{ const t=e.touches[0]; if(!t) return; tStartX=t.clientX; tStartY=t.clientY; },{passive:true});
+  swipeTarget.addEventListener('touchend',e=>{ const t=e.changedTouches[0]; if(!t) return; processSwipe(t.clientX-tStartX, t.clientY-tStartY); },{passive:true});
+  function showOnboardingToast() {
+    try { if(localStorage.getItem('asc-shell-onboarded') === '1') return; } catch(_) {}
+    el.toast.textContent = '↕ 페이지  ·  ↔ 섹션';
+    el.toast.classList.add('show');
+    setTimeout(()=>el.toast.classList.remove('show'), 5000);
+    try { localStorage.setItem('asc-shell-onboarded', '1'); } catch(_) {}
+  }
   window.addEventListener('resize', requestFrameLayout, {passive:true});
   if ('ResizeObserver' in window) new ResizeObserver(requestFrameLayout).observe(el.stage);
-  initChrome(); buildDrawer(); renderPage('right');
+  initChrome(); buildDrawer(); renderPage('right'); showOnboardingToast();
 })();
 </script>
 </body>
